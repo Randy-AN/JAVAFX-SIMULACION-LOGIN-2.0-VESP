@@ -1,0 +1,36 @@
+
+TextField.empaty{
+    
+    -fx-border-color: red;
+    -fx-border-width: 7px;
+   
+  
+}
+
+PasswordField.empaty{
+    
+    -fx-border-color: black;
+    -fx-border-width: 7px;
+   
+  
+}
+
+TextField.error{
+    
+    -fx-border-color: red;
+    -fx-border-width: 7px;
+   
+  
+}
+
+PasswordField.error{
+    
+    -fx-border-color: black;
+    -fx-border-width: 7px;
+   
+  
+}
+
+
+
+

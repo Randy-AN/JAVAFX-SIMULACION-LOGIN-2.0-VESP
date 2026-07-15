@@ -6,7 +6,6 @@ import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import com.randychurunel.view.LoginView;
 import javafx.scene.paint.Color;
-import javafx.stage.StageStyle;
 public class SceneManager {
 
     private Stage escenarioPrincipal;
