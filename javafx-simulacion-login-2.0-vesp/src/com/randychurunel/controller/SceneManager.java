@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 import com.randychurunel.view.LoginView;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
-import com.randychurunel.controller.Login;
 public class SceneManager {
 
     private Stage escenarioPrincipal;
@@ -20,7 +19,7 @@ public class SceneManager {
 
     public void ventanaLogin() {
         try {
-            this.escenarioPrincipal.initStyle(StageStyle.TRANSPARENT);
+           
             LoginView login = LoginView.getInsatanciaLoginView();
             cambiarEscena(login, 477, 555);
             this.escenaPrincipal.setFill(Color.TRANSPARENT);
