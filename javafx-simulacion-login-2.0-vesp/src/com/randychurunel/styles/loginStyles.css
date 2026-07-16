@@ -1,36 +1,99 @@
 
-TextField.empaty{
-    
+TextField.empty{
+
     -fx-border-color: red;
-    -fx-border-width: 7px;
-   
-  
+    -fx-border-width: 3px;
+
+
 }
 
-PasswordField.empaty{
-    
-    -fx-border-color: black;
-    -fx-border-width: 7px;
-   
-  
+PasswordField.empty{
+
+    -fx-border-color: red;
+    -fx-border-width: 3px;
+
+
 }
 
 TextField.error{
-    
+
     -fx-border-color: red;
-    -fx-border-width: 7px;
-   
-  
+    -fx-border-width: 3px;
+
+
 }
 
 PasswordField.error{
-    
+
     -fx-border-color: black;
-    -fx-border-width: 7px;
-   
-  
+    -fx-border-width: 3px;
+
+
+}
+
+/*// mas diseño a mi login mas profesional*/
+
+.root {
+    /* Gradientes azules */
+    -fx-background-color: linear-gradient(to bottom right, #0052D4, #4364F7, #6FB1FC);
+    -fx-background-radius: 17px;
+    -fx-border-radius: 17px;
+    /* Borde para darle volumen */
+    -fx-border-color: #ffffff40;
+    -fx-border-width: 2px;
 }
 
 
 
+.label {
+    -fx-text-fill: white;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    /* Sombra sutil en el texto para que resalte sobre el gradiente */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 1, 1);
+}
+
+
+
+.button {
+    -fx-background-color: #003a99; 
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px; /* bordes en forma mas curveada */
+    -fx-padding: 8px 20px;
+    -fx-cursor: hand; /* Cambia el diseño de flecha a una manita */
+    /* Sombra por debajo del boton */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 5, 0, 0, 3);
+}
+
+/* efecto hover: Cambia de color cuando el mouse pasa por encima */
+.button:hover {
+    -fx-background-color: #0052D4; 
+}
+
+/* Efecto al hacer clic hace un efecto de que presionas el boton */
+.button:pressed {
+    -fx-background-color: #002266;
+    -fx-effect: none; /*hace la simulacion de que se presiono el boton*/
+}
+
+
+.text-field, .password-field {
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: #4364F7;
+    -fx-border-width: 1px;
+}
+
+
+
+.label-con-borde {
+    /* El efecto dropshadow se utiliza para darle contornos 
+    a las letras de mi labal*/
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 0, 0);
+    -fx-text-fill: white; /* Color de la letra */
+    -fx-font-weight: bold;
+}
 

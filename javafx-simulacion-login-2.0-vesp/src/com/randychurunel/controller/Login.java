@@ -27,7 +27,7 @@ public class Login {
 
         if (nombreUsuario.isEmpty()) {
             this.LOGIN_VIEW.getTxtNombreUsuario().getStyleClass().add("empty");
-            
+
             JOptionPane.showMessageDialog(null, "Error el nombre usuario esta vacio");
         } else if (clave.isEmpty()) {
             this.LOGIN_VIEW.getTxtNombreUsuario().getStyleClass().remove("empty");
@@ -35,7 +35,7 @@ public class Login {
             JOptionPane.showMessageDialog(null, "Error la contraseña no se ingreso");
 
         } else {
-            
+
             this.LOGIN_VIEW.getPwdClave().getStyleClass().remove("empty");
             // metodo login 
             Usuario usuario = authSistema.login(nombreUsuario, clave);
@@ -45,8 +45,9 @@ public class Login {
                 JOptionPane.showMessageDialog(null, "tus datos no son corectos");
 
             } else {
-
-                JOptionPane.showMessageDialog(null, "BIenvenido al Sistema ");
+                this.escenarioPrincipal.hide();
+                SceneManager.getInstanciaSceneManager().ventanaBienvenida(usuario.getNombreCompleto());
+                
 
             }
 

@@ -1,4 +1,3 @@
-
 package com.randychurunel.model;
 
 public enum Rol {

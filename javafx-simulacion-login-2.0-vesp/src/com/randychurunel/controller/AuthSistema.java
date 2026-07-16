@@ -11,9 +11,9 @@ public class AuthSistema {
   public AuthSistema(){
       Usuario usuarioAdmin = new Usuario ("admin", "admin","admin", Rol.ADMIN);
       
-      Usuario usuarioUser = new Usuario ("user", "user ","user", Rol.USER);
+      Usuario usuarioUser = new Usuario ("user", "user","user", Rol.USER);
               
-     Usuario usuarioYO = new Usuario ("Randy ", "123","Randy Churunel", Rol.ADMIN);
+     Usuario usuarioYO = new Usuario ("randy ", "uno","Randy Churunel", Rol.ADMIN);
   
      ListaUsuarios.add(usuarioAdmin);
      ListaUsuarios.add(usuarioUser );
@@ -48,3 +48,4 @@ public class AuthSistema {
     
     
 }
+

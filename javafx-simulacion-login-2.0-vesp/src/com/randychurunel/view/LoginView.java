@@ -1,4 +1,3 @@
-
 package com.randychurunel.view;
 
 import com.randychurunel.controller.Imagen;
@@ -22,84 +21,91 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 
+public class LoginView extends BorderPane {
 
-
-public class LoginView extends BorderPane{
-    
     private static LoginView insatanciaLoginView;
-    private Button btnCerrarVentana; 
-    private Label lblTituloVentana ;
+    private Button btnCerrarVentana;
+    private Label lblTituloVentana;
     private HBox barraDeOpciones;
     private VBox cajaVertical;
-    private Label lblNombreUsuario ;
+    private Label lblNombreUsuario;
     private TextField txtNombreUsuario;
     private Label lblClave;
     private PasswordField pwdClave;
     private GridPane formulario;
     private ImageView imageLogin;
     private Button btnIniciarSesion;
-    
-    private final String RUTA_ESTILOS =  "/com/randychurunel/styles/";
-    
-    
-    
-    private LoginView(){
-        
-        this.getStylesheets().add(RUTA_ESTILOS+"loginStyles.css");
-        
-        this.setPadding( new Insets(7)); 
-        this.setBorder(new Border(new BorderStroke(Paint.valueOf("2094C9"),BorderStrokeStyle.SOLID,
-                                               new CornerRadii(17),
-                                               new BorderWidths(5))));
-        
-        this.setBackground(new Background(
-                                     new BackgroundFill(Paint.valueOf("B8E0FF"),
-                                     new CornerRadii(17),
-                                     Insets.EMPTY)));
-        
-        barraDeOpciones = new HBox (24);
-        
-        btnCerrarVentana = new Button("X");
-        lblTituloVentana = new Label ("JavaFX - simulacion login");
-        
-         barraDeOpciones.getChildren().addAll(btnCerrarVentana , lblTituloVentana );
-         
-         this.setTop(barraDeOpciones );
-         
-         // objetos del foermulario 
-         cajaVertical = new VBox (); 
-         
-         formulario = new GridPane () ;
-         
-         lblNombreUsuario  = new Label("Ingrese Su Usuario Please");
-         txtNombreUsuario  = new TextField();
 
-         lblClave = new Label ("Ingrese Su Password ");
-         pwdClave = new PasswordField();
-         
-         formulario.add(lblNombreUsuario, 0, 0);
-         formulario.add(txtNombreUsuario, 2, 0);
-         formulario.add(lblClave, 0, 2);
-         formulario.add(pwdClave, 2, 2);
+    private final String RUTA_ESTILOS = "/com/randychurunel/styles/";
+
+    private LoginView() {
         
-         btnIniciarSesion = new Button ("Iniciar sesion ");
-         
-          imageLogin = new ImageView (new Imagen().getImageLogin("logo"));
-          imageLogin.setFitWidth(99);
-          imageLogin.setFitHeight(99);
-          imageLogin.setCache(true);
-          
-          cajaVertical.setAlignment(Pos.CENTER);
-         
-         cajaVertical.getChildren().addAll(imageLogin,formulario , btnIniciarSesion);
-         
-         this.setCenter(cajaVertical);
+        
+        this.getStylesheets().add(getClass().getResource(RUTA_ESTILOS + "loginStyles.css")
+                .toExternalForm());
+
+        this.getStylesheets().add(RUTA_ESTILOS + "loginStyles.css");
+
+        this.setPadding(new Insets(7));
+        this.setBorder(new Border(new BorderStroke(Paint.valueOf("120E5C"), BorderStrokeStyle.SOLID,
+                new CornerRadii(17),
+                new BorderWidths(7))));
+
+        this.setBackground(new Background(
+                new BackgroundFill(Paint.valueOf("7887AD"),
+                        new CornerRadii(24),
+                        Insets.EMPTY)));
+
+        barraDeOpciones = new HBox(100);
+
+        btnCerrarVentana = new Button("X");
+        lblTituloVentana = new Label("JavaFX - simulacion login");
+        lblTituloVentana.getStyleClass().add("label-con-borde");
+
+        barraDeOpciones.getChildren().addAll(btnCerrarVentana, lblTituloVentana);
+
+        this.setTop(barraDeOpciones);
+
+        // objetos del foermulario 
+        cajaVertical = new VBox();
+
+        formulario = new GridPane();
+
+        lblNombreUsuario = new Label("Ingrese Su Usuario Please");
+        lblNombreUsuario.getStyleClass().add("label-con-borde");
+        txtNombreUsuario = new TextField();
+
+        lblClave = new Label("Ingrese Su Password ");
+        lblClave.getStyleClass().add("label-con-borde");
+        pwdClave = new PasswordField();
+        
+      
+        
+        
+        formulario.add(lblNombreUsuario, 0, 0);
+        formulario.add(txtNombreUsuario, 4, 0);
+        formulario.add(lblClave, 0, 4);
+        formulario.add(pwdClave, 4, 4);
+
+        btnIniciarSesion = new Button("Iniciar sesion ");
+        
+
+        imageLogin = new ImageView(new Imagen().getImageLogin("logo"));
+        imageLogin.setFitWidth(117);
+        imageLogin.setFitHeight(117);
+        imageLogin.setCache(true);
+
+        cajaVertical.setAlignment(Pos.CENTER);
+
+        cajaVertical.getChildren().addAll(imageLogin, formulario, btnIniciarSesion);
+
+        this.setCenter(cajaVertical);
     }
 
-    
     public static LoginView getInsatanciaLoginView() {
-        if ( insatanciaLoginView == null)
-             insatanciaLoginView = new LoginView ();
+        if (insatanciaLoginView == null) {
+            insatanciaLoginView = new LoginView();
+        }
         return insatanciaLoginView;
     }
 
@@ -194,10 +200,5 @@ public class LoginView extends BorderPane{
     public void setBtnIniciarSesion(Button btnIniciarSesion) {
         this.btnIniciarSesion = btnIniciarSesion;
     }
-     
-    
-    
-    
-    
-}
 
+}

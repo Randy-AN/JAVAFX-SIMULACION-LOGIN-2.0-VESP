@@ -1,14 +1,14 @@
-
 package com.randychurunel.model;
 
-
 public class Usuario {
-    private String nombreUsuario ;
-    private String password ;
+
+    private String nombreUsuario;
+    private String password;
     private String nombreCompleto;
     private Rol role;
-    
-    public Usuario(){}
+
+    public Usuario() {
+    }
 
     public Usuario(String nombreUsuario, String password, String nombreCompleto, Rol role) {
         this.nombreUsuario = nombreUsuario;
@@ -48,7 +48,5 @@ public class Usuario {
     public void setRole(Rol role) {
         this.role = role;
     }
-    
-    
-    
+
 }

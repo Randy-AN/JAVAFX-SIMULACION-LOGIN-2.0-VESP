@@ -1,11 +1,16 @@
 package com.randychurunel.controller;
 
+import com.randychurunel.view.BienvenidaView;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import com.randychurunel.view.LoginView;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.StageStyle;
+
 public class SceneManager {
 
     private Stage escenarioPrincipal;
@@ -18,13 +23,12 @@ public class SceneManager {
 
     public void ventanaLogin() {
         try {
-           
+
             LoginView login = LoginView.getInsatanciaLoginView();
             cambiarEscena(login, 477, 555);
             this.escenaPrincipal.setFill(Color.TRANSPARENT);
             new Login(login);
-            
-            
+
         } catch (NullPointerException objetoNulo) {
             JOptionPane.showMessageDialog(null, "error objeto nulo: ventana login  ");
             objetoNulo.printStackTrace();
@@ -33,7 +37,32 @@ public class SceneManager {
             JOptionPane.showMessageDialog(null, "error padre : ventana login  ");
             errorPadre.printStackTrace();
         }
-         
+
+    }
+
+    public void ventanaBienvenida(String nombreUsuario) {
+        try {
+            this.escenarioSecundaria = new Stage();
+            this.escenarioSecundaria.initStyle(StageStyle.TRANSPARENT);
+            this.escenarioSecundaria.initModality(Modality.APPLICATION_MODAL);
+             
+            BienvenidaView root = new BienvenidaView(nombreUsuario);
+            
+            Scene escena = new Scene(root);
+            
+            this.escenarioSecundaria.setScene(escena);
+            this.escenarioSecundaria.show();
+            
+
+        } catch (NullPointerException objetoNulo) {
+            JOptionPane.showMessageDialog(null, "error objeto nulo: ventana login  ");
+            objetoNulo.printStackTrace();
+
+        } catch (Exception errorPadre) {
+            JOptionPane.showMessageDialog(null, "error padre : ventana login  ");
+            errorPadre.printStackTrace();
+        }
+
     }
 
     public void cambiarEscena(Pane panel, int ancho, int alto) {
@@ -88,4 +117,3 @@ public class SceneManager {
     }
 
 }
-
